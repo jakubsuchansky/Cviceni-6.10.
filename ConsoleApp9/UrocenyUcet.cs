@@ -7,6 +7,13 @@ public class UrocenyUcet : Ucet
         UrokovaSazba = urokovaSazba;
     }
 
-    public int UrokovaSazba { get; set; }
+    public int UrokovaSazba { get;
+        set => field = value > 0 ? value : throw new ArgumentException(); 
+    }
+
+    public virtual void PrictiUrok()
+    {
+        PenizeNaUcte += UrokovaSazba;
+    }
 
 }

@@ -5,7 +5,7 @@ public class Ucet(int penizeNaUcte, bool stav)
     public int PenizeNaUcte
     {
         get;
-        private set => field = value > 0 ? value : throw new ArgumentException();
+        protected set => field = value > 0 ? value : throw new ArgumentException();
     } = penizeNaUcte;
 
     public bool Stav
